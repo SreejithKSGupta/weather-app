@@ -1,0 +1,218 @@
+:root {
+    --padding: 10px;
+    --margin: 10px;
+    --bordrad: 20px;
+    --primcol: #125675;
+    --opacity: .8;
+    --fontcol: #ffffff;
+    --bgcol: #242424;
+
+    --animspeed:400ms;
+
+    --locationinfotext: "Click to autodetect your current location";
+    --infobtntext: "Search for a place to find the wather and other details";
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-size: larger;
+    color: var(--fontcol);
+    font-size: clamp(1rem, 2vw, 2rem);
+    scroll-behavior: smooth;
+    animation: fadein var(--animspeed);
+    transition-duration:var(--animspeed);
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: none;
+    transition-duration:0ms;
+}
+
+#backgroundimage {
+    background-color: var(--bgcol);
+    overscroll-behavior: none;
+    background-repeat: no-repeat;
+    background-image: url("BG_images/clear sky.webp");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#box {
+    height: 80vh;
+    width: clamp(500px, 40%, 60vw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: var(--bordrad);
+}
+
+#search {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: var(--padding);
+    height: 5vh;
+    width: 100%;
+    background-color: #070707;
+    border-radius: var(--bordrad);
+    padding-left: calc(var(--padding)*3);
+    margin-bottom: var(--margin);
+}
+
+#searchhere {
+    -webkit-user-modify: read-write-plaintext-only;
+    width: 80%;
+    border: none;
+    outline: none;
+    background-color: #07070700;
+}
+
+#searchicon {
+    height: 4vh;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#weathershow {
+    animation: fadein var(--animspeed);
+    max-height: 70vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+    background-color: var(--bgcol);
+    color: var(--fontcol);
+    opacity: 90%;
+    border-radius: var(--bordrad);
+}
+
+#wicon {
+    background-color: #000000;
+    height: 10vh;
+    width: 10vh;
+    margin: var(--margin);
+    border-radius: var(--bordrad);
+}
+
+.wdata {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    border-radius: var(--bordrad);
+    background-color: #070707;
+    margin-top: var(--margin);
+    margin-bottom: var(--margin);
+    padding: var(--padding);
+}
+
+.wdata :nth-child(1) {
+    width: 50%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.wdata :nth-child(2) {
+    width: 40%;
+    text-align: left;
+}
+
+#infobtn {
+    position: absolute;
+    top: 5vh;
+    left: 5vw;
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+    margin: var(--margin);
+    border-radius: var(--bordrad);
+    background-color: #09014b;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 150%;
+    color: rgb(252, 252, 252);
+}
+
+#infobtn:hover {
+    background-color: #000000;
+    color: red;
+}
+
+#infobtn:hover::after {
+    animation: fadein var(--animspeed);
+    content: var(--infobtntext);
+    position: absolute;
+    top: 0px;
+    left: 5vw;
+    height: 5vh;
+    width: 55vh;
+    cursor: pointer;
+    border-radius: var(--bordrad);
+    background-color: #09014b;
+    text-align: center;
+    line-height: 5vh;
+    font-size: 50%;
+    color: rgb(255, 255, 255);
+}
+
+#locationbtn {
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
+    height: 5vh;
+    width: 5vh;
+    cursor: pointer;
+    margin: var(--margin);
+    border-radius: var(--bordrad);
+    background-color: #04afff;
+    color: rgb(252, 252, 252);
+}
+
+#locationbtn img {
+    height: 3vh;
+    width: 3vh;
+    border-radius: var(--bordrad);
+    padding: 1vh;
+}
+
+#locationbtn:hover::after {
+    animation: fadein var(--animspeed);
+    content: var(--locationinfotext);
+    position: absolute;
+    top: 0px;
+    right: 5vw;
+    height: 5vh;
+    width: 55vh;
+    cursor: pointer;
+    border-radius: var(--bordrad);
+    background-color: #09014b;
+    text-align: center;
+    line-height: 5vh;
+    color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        width: 0px;
+        font-size: 0px;
+    }
+    to {
+        opacity: 1;
+    }
+}
