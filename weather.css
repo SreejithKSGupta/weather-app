@@ -78,6 +78,7 @@ body {
 
 #searchicon {
     height: 4vh;
+    width: 4vh;
     cursor: pointer;
     align-self: flex-end;
 }
