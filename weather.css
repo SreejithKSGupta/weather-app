@@ -1,6 +1,6 @@
 :root {
     --padding: 10px;
-    --margin: 10px;
+    --margin: 5px;
     --bordrad: 20px;
     --primcol: #125675;
     --opacity: .8;
@@ -10,58 +10,49 @@
     --animspeed:400ms;
 
     --locationinfotext: "Click to autodetect your current location";
-    --infobtntext: "Search for a place to find the wather and other details";
+    --infobtntext: "Search for a place to find the weather";
 }
 
 * {
     margin: 0px;
     padding: 0px;
-    font-size: larger;
     color: var(--fontcol);
     font-size: clamp(1rem, 2vw, 2rem);
     scroll-behavior: smooth;
     animation: fadein var(--animspeed);
     transition-duration:var(--animspeed);
-
 }
 
 body {
-    width: 100vw;
     height: 100vh;
+    width: 100vw;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    animation: none;
-    transition-duration:0ms;
-}
-
-#backgroundimage {
-    background-color: var(--bgcol);
     overscroll-behavior: none;
     background-repeat: no-repeat;
     background-image: url("BG_images/clear sky.webp");
-    background-attachment: fixed;
     background-size: cover;
 }
 
-#box {
-    height: 80vh;
-    width: clamp(500px, 40%, 60vw);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: var(--bordrad);
-}
-
-#search {
-
+#topbar {
+    height: 10vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+}
+
+#search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
     padding: var(--padding);
     height: 5vh;
-    width: 100%;
+    width: clamp(300px, 40%, 800px);
     background-color: #070707;
     border-radius: var(--bordrad);
     padding-left: calc(var(--padding)*3);
@@ -73,28 +64,28 @@ body {
     width: 80%;
     border: none;
     outline: none;
-    background-color: #07070700;
+    background-color: #070707dc;
 }
 
 #searchicon {
     height: 4vh;
     width: 4vh;
     cursor: pointer;
-    align-self: flex-end;
 }
 
 #weathershow {
     animation: fadein var(--animspeed);
-    max-height: 70vh;
-    width: 100%;
+    max-height: 80vh;
+    width: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     overflow: scroll;
     background-color: var(--bgcol);
     color: var(--fontcol);
-    opacity: 90%;
+    opacity: 96%;
     border-radius: var(--bordrad);
+    padding: var(--padding);
 }
 
 #wicon {
@@ -112,8 +103,7 @@ body {
     width: 90%;
     border-radius: var(--bordrad);
     background-color: #070707;
-    margin-top: var(--margin);
-    margin-bottom: var(--margin);
+    margin: var(--margin) 0px;
     padding: var(--padding);
 }
 
@@ -129,13 +119,9 @@ body {
 }
 
 #infobtn {
-    position: absolute;
-    top: 5vh;
-    left: 5vw;
     height: 5vh;
     width: 5vh;
     cursor: pointer;
-    margin: var(--margin);
     border-radius: var(--bordrad);
     background-color: #09014b;
     text-align: center;
@@ -153,30 +139,24 @@ body {
     animation: fadein var(--animspeed);
     content: var(--infobtntext);
     position: absolute;
-    top: 0px;
-    left: 5vw;
-    height: 5vh;
-    width: 55vh;
+    width:60%;
+    top: var(--padding);
+    right: 20%;
     cursor: pointer;
     border-radius: var(--bordrad);
     background-color: #09014b;
     text-align: center;
-    line-height: 5vh;
-    font-size: 40%;
+    padding: var(--padding);
     color: rgb(255, 255, 255);
+    font-size: 1rem;
 }
 
 #locationbtn {
-    position: absolute;
-    top: 5vh;
-    right: 5vw;
     height: 5vh;
     width: 5vh;
     cursor: pointer;
-    margin: var(--margin);
     border-radius: var(--bordrad);
-    background-color: #04afff;
-    color: rgb(252, 252, 252);
+    background-color: #042fbe;
 }
 
 #locationbtn img {
@@ -190,17 +170,16 @@ body {
     animation: fadein var(--animspeed);
     content: var(--locationinfotext);
     position: absolute;
-    top: 0px;
-    right: 5vw;
-    height: 5vh;
-    width: 55vh;
+    top: var(--padding);
+    right: 25%;
+    width:50%;
     cursor: pointer;
+    text-align: center;
+    padding: 15px;
     border-radius: var(--bordrad);
     background-color: #09014b;
-    text-align: center;
-    line-height: 5vh;
-    font-size: 70%;
     color: rgb(255, 255, 255);
+    font-size: 1rem;
 }
 
 ::-webkit-scrollbar {
