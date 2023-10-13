@@ -1,9 +1,9 @@
-# weather App 
+# Weather App 
  A simple weather App which can show the temperature, humidity, climate etc of a place, either by auto detecting from the user or by autodetecting the location from a supported browser.
 
 ## Features 
 *  Auto detect Location
-* Change the Background image according to the current climate of the location
+*  Change the Background image according to the current climate of the location
 *  Show the climate of a user-enterd Location
 *  Responsive, Mobile optimized
 *  Animated
